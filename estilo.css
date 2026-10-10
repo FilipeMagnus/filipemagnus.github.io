@@ -1,0 +1,91 @@
+:root {
+  --fundo: #f4f8f7;
+  --texto: #1b2422;
+  --suave: #55625f;
+  --destaque: #00695c;
+  --cartao: #ffffff;
+  --borda: #d6e0dd;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #101614;
+    --texto: #e1e8e6;
+    --suave: #a3b1ad;
+    --destaque: #7fd4c4;
+    --cartao: #18201e;
+    --borda: #2c3735;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+h1 { font-size: 1.8rem; line-height: 1.25; margin: 0 0 8px; }
+h2 { font-size: 1.25rem; margin: 36px 0 8px; }
+h3 { font-size: 1.05rem; margin: 24px 0 4px; }
+p, li { color: var(--texto); }
+a { color: var(--destaque); }
+
+.subtitulo { color: var(--suave); margin: 0 0 24px; }
+
+.cartao {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+
+.cartao > :first-child { margin-top: 0; }
+.cartao > :last-child { margin-bottom: 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 0.95rem;
+}
+
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 8px;
+  border-bottom: 1px solid var(--borda);
+}
+
+th { color: var(--suave); font-weight: 600; }
+
+/* Tabela vira lista no celular. */
+@media (max-width: 600px) {
+  table, thead, tbody, tr, th, td { display: block; }
+  thead { display: none; }
+  tr { border-bottom: 1px solid var(--borda); padding: 8px 0; }
+  td { border: none; padding: 2px 0; }
+  td::before {
+    content: attr(data-rotulo) ": ";
+    color: var(--suave);
+    font-weight: 600;
+  }
+}
+
+nav { margin-bottom: 24px; font-size: 0.95rem; }
+nav a { margin-right: 16px; }
+
+footer {
+  margin-top: 48px;
+  color: var(--suave);
+  font-size: 0.9rem;
+}
