@@ -57,15 +57,22 @@
   <strong>chave Pix</strong>, usada para que os outros possam pagar a você. Tudo o que você
   registra num grupo é visível a todos os membros daquele grupo.</p>
 
-  <h3>2.5. Leitura de nota fiscal (NFC-e)</h3>
-  <p>Ao ler o QR Code de uma NFC-e, o app usa a câmera só para ler o código; nenhuma imagem é
-  gravada ou enviada. Com o código, o app consulta a nota no portal público da Secretaria da
-  Fazenda do Rio Grande do Sul (SEFAZ-RS) e consulta os dados públicos da loja (nome) pelo
-  CNPJ na <a href="https://brasilapi.com.br">BrasilAPI</a>.</p>
-  <p>A página da nota pode mostrar o CPF informado na compra, mas <strong>o app não guarda
-  o CPF</strong>. Guardamos a loja, os itens, os valores, a data e a chave de acesso da nota
-  (para não lançar a mesma nota duas vezes). Esses dados fazem parte das suas finanças e
-  seguem as regras dos itens 2.1 e 2.3.</p>
+  <h3>2.5. Leitura de nota fiscal (NFC-e e NF-e)</h3>
+  <p>Ao ler o QR Code de uma NFC-e (cupom) ou o código de barras de uma NF-e (DANFE), o app usa
+  a câmera só para ler o código; nenhuma imagem é gravada ou enviada. Com o código, o app
+  consulta a nota no portal público da Secretaria da Fazenda do Rio Grande do Sul (SEFAZ-RS),
+  no caso da NFC-e, ou no Portal Nacional da NF-e, da Receita Federal, no caso da NF-e, e
+  consulta os dados públicos da loja (nome) pelo CNPJ na
+  <a href="https://brasilapi.com.br">BrasilAPI</a>.</p>
+  <p>A consulta da NF-e é feita na própria página do Portal Nacional, aberta dentro do app. Esse
+  portal exige a verificação “Sou humano” do serviço <a href="https://www.hcaptcha.com/privacy">hCaptcha</a>,
+  que recebe dados técnicos do aparelho e do navegador para essa verificação, conforme a
+  política de privacidade dele.</p>
+  <p>A página da nota pode mostrar o CPF informado na compra (e, na NF-e, também o nome e o
+  endereço de quem comprou), mas <strong>o app não guarda esses dados</strong>. Guardamos a
+  loja, os itens, os valores, a data e a chave de acesso da nota (para não lançar a mesma nota
+  duas vezes). Esses dados fazem parte das suas finanças e seguem as regras dos itens 2.1 e
+  2.3.</p>
 
   <h3>2.6. Assinatura do Premium</h3>
   <p>O pagamento é feito pela Google Play ou pela App Store; <strong>não recebemos dados de
@@ -98,6 +105,8 @@
       <tr><td data-rotulo="Serviço">RevenueCat</td><td data-rotulo="Para quê">Situação da assinatura do Premium</td><td data-rotulo="Onde">Estados Unidos</td></tr>
       <tr><td data-rotulo="Serviço">Google Play / App Store</td><td data-rotulo="Para quê">Pagamento da assinatura</td><td data-rotulo="Onde">Estados Unidos e outros</td></tr>
       <tr><td data-rotulo="Serviço">SEFAZ-RS</td><td data-rotulo="Para quê">Consulta da NFC-e lida por você</td><td data-rotulo="Onde">Brasil</td></tr>
+      <tr><td data-rotulo="Serviço">Portal Nacional da NF-e (Receita Federal)</td><td data-rotulo="Para quê">Consulta da NF-e lida por você</td><td data-rotulo="Onde">Brasil</td></tr>
+      <tr><td data-rotulo="Serviço">hCaptcha</td><td data-rotulo="Para quê">Verificação “Sou humano” exigida pelo Portal Nacional da NF-e</td><td data-rotulo="Onde">Estados Unidos</td></tr>
       <tr><td data-rotulo="Serviço">BrasilAPI</td><td data-rotulo="Para quê">Nome da loja a partir do CNPJ (dado público)</td><td data-rotulo="Onde">Brasil</td></tr>
     </tbody>
   </table>
